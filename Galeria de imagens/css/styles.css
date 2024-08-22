@@ -1,0 +1,45 @@
+
+
+.titulos{
+    text-align: center;
+    margin: 5%;
+    font-size: 20px;
+}
+
+.titulos h1{
+    color: #BF5841;
+}
+
+.titulos h3{
+    color: #260101;
+}
+
+.fotos{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    text-align: center;
+    margin: 20px 20px;
+}
+
+.animais{
+    margin: 10px 2%;
+    max-height: 30%;
+    width: 20%;
+    border: #260101 solid 2px;
+    background-size: contain;
+}
+
+.animais img{
+    height: 40%;
+    width: 100%;
+}
+
+.animais p{
+    margin: 5% 1%;
+}
+
+.animais button{
+    background-color: #BF5841;
+    margin-top: 2%;
+}
