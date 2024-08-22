@@ -7,39 +7,47 @@
 }
 
 .titulos h1{
-    color: #BF5841;
+    color: #558C03;
 }
 
 .titulos h3{
-    color: #260101;
+    color: #222601;
 }
 
 .fotos{
+    border-radius: 10px;;
+    background-color: rgba(128, 128, 128, 0.469);
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     text-align: center;
-    margin: 20px 20px;
+    margin: 2% 1%;
+    
 }
 
 .animais{
-    margin: 10px 2%;
-    max-height: 30%;
+    border-radius: 5px;
+    background-color: white;
+    margin: 2.3% 2.3% 2%;
+    max-height: 60vh;
     width: 20%;
-    border: #260101 solid 2px;
+    border: #222601 solid 2px;
     background-size: contain;
+    font-family: Arial;
 }
 
 .animais img{
-    height: 40%;
+    height: 55%;
     width: 100%;
 }
 
 .animais p{
-    margin: 5% 1%;
+    margin: 5% 4%;
+    text-align: justify;
+    font-size: 100%;
 }
 
-.animais button{
-    background-color: #BF5841;
-    margin-top: 2%;
+.animais h1{
+    color: #384001;
+    text-align: center;
 }
