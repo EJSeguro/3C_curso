@@ -51,3 +51,34 @@
     color: #384001;
     text-align: center;
 }
+
+@media (max-width: 1024px) and (max-height:904px){
+    .animais p{
+        font-size: 72%;
+    }
+    .animais h1{
+        font-size: 90%;
+    }
+}
+
+@media (max-width: 768px) and (max-height:678px){
+    .animais p{
+        font-size: 55%;
+    }
+    .animais h1{
+        font-size: 90%;
+    }
+}
+
+@media (max-width: 425px) and (max-height:678px){
+    .animais p{
+        font-size: 45%;
+    }
+    .animais h1{
+        font-size: 50%;
+    }
+
+    .animais img{
+        height: 30%;
+    }
+}
