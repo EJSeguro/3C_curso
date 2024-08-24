@@ -33,6 +33,7 @@ header{
     display: flex;
     align-items: center;
     justify-content: center;
+    font-weight: bold;
     gap: 30px;
 }
 
@@ -53,7 +54,8 @@ header{
 }
 
 .navegacao2 a:hover{
-    color: rgb(72, 72, 72);
+    color: rgb(119, 119, 119);
+    font-size: 15px;
 }
 
 .navegacao2 button:hover{
@@ -63,4 +65,97 @@ header{
     border-style: solid;
     border: 2px;
     border-color: rgb(62, 141, 62);
+}
+
+.main_banner{
+    background-image: url('../img/mainbanner.png');
+    background-size: cover;
+    background-position: center;
+    padding: 23.3em 0;
+    position: relative;
+    color:white;
+    text-align: center;
+    font-weight: bold;
+}
+
+.main_banner p{
+    font-size: 34px;
+}
+
+.main_banner h1{
+    font-size: 54px;
+}
+
+.container_planos{
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+.container_planos h1{
+    font-size: 40px;
+}
+
+.container_planos p{
+    font-size: 36px;
+}
+
+.container_precos{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5em;
+    
+}
+
+.planos {
+    display: flex;
+    
+    width: 100%;
+    height: 100%;
+}
+.planos ul{
+    flex: 1 1 200px;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+.planos ul li{
+    padding: 7%;
+    list-style: none;
+    color: rgb(32, 32, 32);
+    font-size: large;
+    
+    background-color: rgb(192, 192, 192);
+}
+
+.planos .preco{
+    color: white;
+    font-size: larger;
+    font-weight: bold;
+    background-color: rgb(98, 223, 98);
+    border-radius: 50%;
+    height: 100px;
+    width: 120px;
+    line-height: 100px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: -50px;
+    position: relative;
+}
+
+.planos .nome_plano{
+    border-radius: 10px 10px 0 0;
+    color: white;
+    font-weight: bold;
+    background-color: rgb(64, 86, 111);
+    height: 60px;
+    font-size: 20px;
+    padding-top: 30%;
+}
+
+.planos .botao_plano{
+    border-radius: 0 0 10px 10px;
+    background-color: rgb(98, 223, 98);
+    color: white;
+    font-size: larger;
+    font-weight: bold;
 }
