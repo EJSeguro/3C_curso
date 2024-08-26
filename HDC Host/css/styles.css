@@ -186,21 +186,21 @@ header{
 }
 
 .busca_dominio h2{
-   font-size: 40px;
+    font-size: 40px;
 }
 
 .busca_dominio p{
     font-size: 30px;
     margin-bottom: 2%;
- }
+}
 
- .procura_dominio{
+.procura_dominio{
     display: flex;
     flex-direction: column;
     align-items: center;
- }
+}
 
- .procura_dominio input[type=text]{
+.procura_dominio input[type=text]{
     width: 60%;
     min-width: 200px;
     height: 70px;
@@ -209,9 +209,9 @@ header{
     border-style: none;
     border-radius: 15px;
     margin-bottom: 2%;
- }
+}
 
- .procura_dominio input[type=submit]{
+.procura_dominio input[type=submit]{
     color: rgb(255, 255, 255);
     border-radius: 10px;
     border: none;
@@ -221,7 +221,13 @@ header{
     min-width: 150px;
     font-size: large;
     font-weight: bold;
- }
+}
 
- 
+.procura_dominio input[type=text]:hover{
+    height: 90px;
+    width: 63%;
+    font-size: 20px;
+}
+
+
 
