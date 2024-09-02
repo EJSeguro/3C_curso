@@ -1,7 +1,7 @@
 <?php
 
 $salario = 1.320;
-$quilowatts = (1/7 * $salario)/100;
+$quilowatts = ($salario/7)/100;
 $consumo = readline("Consumo: ");
 $valorTotal = $quilowatts * $consumo;
 echo "Real por Quilowatts: R$ $quilowatts";
