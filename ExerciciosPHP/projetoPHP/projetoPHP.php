@@ -57,12 +57,13 @@ function registerProduct()
             if ($verifyProduct != '') {
                 echo "\nProduto já cadastrado, tente novamente!\n";
                 readline("Pressione ENTER para tentar novamente . . .");
-            }
-            else{
+            } else {
                 $productPrice = readline("Informe o preço: ");
                 $productQTD = readline("Informe a quantidade em estoque: ");
+                $newId = end($products);
+                $newId = $newId ? $newId[$newId]['id'] : 1;
                 $product = [
-                    'id' => count($products)+1,
+                    'id' => $newId,
                     'name' => $productName,
                     'price' => $productPrice,
                     'QTD' => $productQTD
@@ -77,21 +78,65 @@ function registerProduct()
     }
 }
 
+function productDelete(){
+    global $products;
+    $productId = 0;
+    while(true){
+        echo "\nDeseja remover um produto? 1-Continuar 2-Voltar\n";
+        $choice = readline("Digite aqui: ");
+        if ($choice == 1) {
+            $productId= readline("Informe o id do produto: ");
+            $verifyProduct = array_search($productId, array_column($products, 'id'));
+            if ($verifyProduct == '') {
+                echo "\nID inválido, tente novamente!\n";
+                readline("Pressione ENTER para tentar novamente . . .");
+            } else {
+                unset($products[$verifyProduct]);
+                readline("Produto removido com sucesso, pressione ENTER para constinuar. . .");
+                system('clear');
+            }
+        } else {
+            return sellMenu();
+        }
+    }
+}
+
 function sellMenu()
 {
     global $products;
     while (true) {
         system('clear');
-        for ($i = 0; $i < count($products); $i++){
-            echo "ID: " .  $products[$i]['id'] . " Nome: " . $products[$i]['name'] . " Preço: " . $products[$i]['price'] . " Estoque: " . $products[$i]['QTD'] . "\n";
+        foreach ($products as $product) {
+            echo "ID: " .  $product['id'] . " Nome: " . $product['name'] . " Preço: " . $product['price'] . " Estoque: " . $product['QTD'] . "\n";
         }
-        echo "1-Vender 2-Cadastrar Produto 3-Voltar\n";
+        echo "1-Vender 2-Admininstrar Produtos 3-Voltar\n";
         $choice = readline("Digite aqui: ");
         switch ($choice) {
             case 1:
                 break;
             case 2:
-                return registerProduct();
+                $productMenus = true;
+                while ($productMenus == true) {
+                    echo "1-Adicionar Produto 2-Editar Produto 3-Deletar Produto 4-Voltar\n";
+                    $choice = readline("Digite aqui: ");
+                    switch ($choice) {
+                        case 1:
+                            return registerProduct();
+                            break;
+                        case 2:
+                            break;
+                        case 3:
+                            return productDelete();
+                            break;
+                        case 4:
+                            $productMenus = false;
+                            break;
+                        default:
+                            echo "\nOpção inválida, tente novamente !\n";
+                            readline("Pressione ENTER para continuar . . .");
+                            break;
+                    }
+                }
                 break;
             case 3:
                 return menu();
