@@ -1,7 +1,7 @@
 <?php
     require_once "Animal.php";
     require_once "Humano.php";
-    require_once "Funcionario";
+    require_once "Funcionario.php";
     
 
     $produtos = [];

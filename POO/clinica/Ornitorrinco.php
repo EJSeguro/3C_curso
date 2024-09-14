@@ -1,5 +1,5 @@
 <?php
-    require_once "animalClass.php";
+    require_once "Animal.php";
 
     class Ornitorrinco extends Animal{
         function falar(){
