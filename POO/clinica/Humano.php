@@ -6,14 +6,16 @@
         private $idade;
         private $endereco;
         private $contato;
+        private $compra;
 
-        public function __construct($nome, $cpf, $idade, $endereco, $contato)
+        public function __construct($nome, $cpf, $idade, $endereco, $contato, $compra)
         {
             $this->nome = $nome;
             $this->cpf = $cpf;
             $this->idade = $idade;
             $this->endereco = $endereco;
             $this->contato = $contato;
+            $this->compra = $compra;
         }
 
         public function __toString()
@@ -39,6 +41,10 @@
 
         public function getCpf() {
             return $this->cpf;
+        }
+
+        public function getCompra(){
+            return $this->compra;
         }
         
     }

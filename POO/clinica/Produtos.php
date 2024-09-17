@@ -1,19 +1,27 @@
 <?php
 
-
-
 class Produtos
 {
-
+    private $id;
     private $produto;
     private $preco;
     private $qtd;
-    public function __construct($produto, $preco, $qtd)
+    public function __construct($id, $produto, $preco, $qtd)
     {
-
+        $this->id = $id;
         $this->produto = $produto;
         $this->preco = $preco;
         $this->qtd = $qtd;
+    }
+
+    public function __toString()
+    {
+        return "ID: $this->id Produto: $this->produto Preço: R$ $this->preco Estoque: $this->qtd\n";
+    }
+
+    public function getId()
+    {
+        return $this->id;
     }
 
     public function getProduto()
@@ -45,4 +53,5 @@ class Produtos
     {
         $this->produto = $valor;
     }
+
 }
