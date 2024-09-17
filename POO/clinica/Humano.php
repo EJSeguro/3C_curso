@@ -18,7 +18,7 @@
 
         public function __toString()
         {
-            return "$this->nome\nCPF: $this->cpf\nIdade: $this->idade\nEndereço: $this->endereco\nContato: $this->contato";           
+            return "Nome: $this->nome\nCPF: $this->cpf\nIdade: $this->idade\nEndereço: $this->endereco\nContato: $this->contato";           
         }
 
         public function getNome(){
@@ -40,4 +40,5 @@
         public function getCpf() {
             return $this->cpf;
         }
+        
     }

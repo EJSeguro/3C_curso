@@ -13,7 +13,7 @@ class Animal
     private $color;
     private $peso;
     private $tamanho;
-    private  Humano $humano;
+    private Humano $humano;
 
     public function __construct($name, $raca, $qtdPatas, $color, $peso, $tamanho, $humano)
     {
@@ -25,6 +25,11 @@ class Animal
         $this->tamanho = $tamanho;
         $this->humano = $humano;
 
+    }
+
+    public function descricaoAnimal()
+    {
+        echo "Nome: $this->name Raça: $this->raca Patas: $this->qtdPatas Cor: $this->color Peso: $this->peso Tamanho: $this->tamanho\n======Dono======$this->humano\n";
     }
 
     public function getName()
