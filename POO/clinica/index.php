@@ -492,7 +492,3 @@ while (true) {
             break;
     };
 }
-
-$cpf = readline("digite o cpf do cria");
-$cria = findObject($humanos, 'getCpf', $cpf);
-var_dump($cria);
