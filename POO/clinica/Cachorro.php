@@ -3,6 +3,6 @@
     
     class Cachorro extends Animal{
         public function falar(){
-            echo "Latir";
+            return "Latir";
         }
     }

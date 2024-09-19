@@ -4,6 +4,6 @@
     class Ornitorrinco extends Animal{
         
         function falar(){
-            echo "Barulhos de Ornitorrinco";
+            return "Barulhos de Ornitorrinco";
         }
     }

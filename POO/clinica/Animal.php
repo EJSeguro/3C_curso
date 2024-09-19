@@ -29,7 +29,7 @@ class Animal
 
     public function descricaoAnimal()
     {
-        echo "Nome: $this->name Raça: $this->raca Patas: $this->qtdPatas Cor: $this->color Peso: $this->peso Tamanho: $this->tamanho\n======Dono======$this->humano\n";
+        echo "Nome: $this->name Raça: $this->raca Patas: $this->qtdPatas Cor: $this->color Peso: $this->peso Tamanho: $this->tamanho\n======Dono======\n$this->humano\n";
     }
 
     public function getName()
@@ -68,7 +68,7 @@ class Animal
 
     public function falar()
     {
-        echo "O bicho faz barulho";
+        return "O bicho faz barulho";
     }
 
 }
