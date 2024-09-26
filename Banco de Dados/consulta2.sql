@@ -11,7 +11,7 @@ WHERE status = 'Despachada';
 
 SELECT clienteFisico.nome FROM clienteFisico JOIN cliente ON clienteFisico.codCliente = cliente.codCliente WHERE endereco = 'Rua Marechal Floriano, 56';
 
-SELECT * FROM clienteJuridico;
+SELECT * FROM clienteJuridico JOIN cliente ON clienteJuridico.codCliente = cliente.codCliente;
 
 SELECT clienteJuridico.nomeFantasia, cliente.endereco, cliente.telefone, cidade.nome, cidade.siglaEStado FROM clienteJuridico
 INNER JOIN cliente
