@@ -10,7 +10,6 @@ class Inventory extends Model
     use HasFactory;
     protected $fillable = [
         'explorer_id',
-        'item_id',
     ];
 
     public function explorer(){
@@ -18,6 +17,6 @@ class Inventory extends Model
     }
 
     public function item(){
-        return $this->belongsTo(Item::class);
+        return $this->hasMany(Item::class);
     }
 }
