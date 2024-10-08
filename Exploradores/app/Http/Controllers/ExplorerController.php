@@ -21,14 +21,15 @@ class ExplorerController extends Controller
      */
     public function store(Request $request)
     {
-        $inventory = Inventory::create();
         $explorer = $request->validate([
-            'name'=>'required',
-            'age'=>'required',
+            'name'=>'string|required',
+            'age'=>'integer|required',
         ]);
-        $explorer['inventory_id']=$inventory->id;
+
 
         $newExplorer = Explorer::create($explorer);
+
+        Inventory::create(['explorer_id'=>$newExplorer->id]);
         return response()->json($newExplorer, 200);
     }
 
@@ -37,7 +38,7 @@ class ExplorerController extends Controller
      */
     public function show(Explorer $explorer)
     {
-        //
+        return response()->json($explorer, 200);
     }
 
     /**

@@ -20,7 +20,13 @@ class LocationController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $location = $request->validate([
+            'latitude'=>'double|required',
+            'longitude'=>'double|required',
+            'explorer_id'=>'integer|required',
+        ]);
+        $newLocation = Location::create($location);
+        return response()->json($newLocation, 200);
     }
 
     /**

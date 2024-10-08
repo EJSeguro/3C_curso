@@ -20,7 +20,15 @@ class ItemController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $item = $request->validate([
+            'inventory_id'=>'integer|required',
+            'name'=>'string|required',
+            'price'=>'double|required',
+            'location_id'=>'integer|required',
+        ]);
+
+        $newItem = Item::create($item);
+        return response()->json($newItem, 200);
     }
 
     /**
@@ -28,7 +36,7 @@ class ItemController extends Controller
      */
     public function show(Item $item)
     {
-        //
+        return response()->json($item, 200);
     }
 
     /**

@@ -11,11 +11,10 @@ class Explorer extends Model
     protected $fillable = [
         'name',
         'age',
-        'invetory_id',
     ];
 
     public function inventory(){
-        return $this->belongsTo(Inventory::class);
+        return $this->hasOne(Inventory::class);
     }
 
     public function locations(){

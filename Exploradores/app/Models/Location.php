@@ -9,8 +9,12 @@ class Location extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'explorer_id',
         'latitude',
         'longitude',
+        'explorer_id',
     ];
+
+    public function explorer(){
+        return $this->belongsTo(Explorer::class);
+    }
 }
