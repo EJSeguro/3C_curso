@@ -16,7 +16,7 @@ class Inventory extends Model
         return $this->belongsTo(Explorer::class);
     }
 
-    public function item(){
+    public function items(){
         return $this->hasMany(Item::class);
     }
 }

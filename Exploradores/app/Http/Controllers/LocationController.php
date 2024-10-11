@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Explorer;
 use App\Models\Location;
 use Illuminate\Http\Request;
 
@@ -12,7 +13,7 @@ class LocationController extends Controller
      */
     public function index()
     {
-        //
+        return response()->json(Location::all());
     }
 
     /**
@@ -21,9 +22,9 @@ class LocationController extends Controller
     public function store(Request $request)
     {
         $location = $request->validate([
-            'latitude'=>'double|required',
-            'longitude'=>'double|required',
-            'explorer_id'=>'integer|required',
+            'latitude' => 'numeric|required',
+            'longitude' => 'numeric|required',
+            'explorer_id' => 'numeric|required|exists:explorers,id',
         ]);
         $newLocation = Location::create($location);
         return response()->json($newLocation, 200);
@@ -32,9 +33,19 @@ class LocationController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Location $location)
+    public function show(Explorer $explorer)
     {
-        //
+        return response()->json([
+            'explorer' => [
+                'id' => $explorer->id,
+                'name' => $explorer->name,
+            ],
+            'location' => [
+                'latitude' => $explorer->location()->latitude,
+                'longitude' => $explorer->location()->longitude,
+                'visited_at' => $explorer->location()->created_at,
+            ]
+        ], 200);
     }
 
     /**
@@ -51,5 +62,11 @@ class LocationController extends Controller
     public function destroy(Location $location)
     {
         //
+    }
+
+    public function showAll(Explorer $explorer)
+    {
+        $locations = $explorer->locations;
+        return response()->json($locations, 200);
     }
 }

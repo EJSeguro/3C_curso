@@ -21,12 +21,12 @@ class ItemController extends Controller
     public function store(Request $request)
     {
         $item = $request->validate([
-            'inventory_id'=>'integer|required',
-            'name'=>'string|required',
-            'price'=>'double|required',
-            'location_id'=>'integer|required',
+            'inventory_id'=>'numeric|required',
+            'name'=>'string|required|unique:items,name',
+            'price'=>'numeric|required',
+            'latitude'=>'numeric|required',
+            'longitude'=>'numeric|required',
         ]);
-
         $newItem = Item::create($item);
         return response()->json($newItem, 200);
     }
